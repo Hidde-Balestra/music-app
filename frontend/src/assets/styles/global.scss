@@ -1,0 +1,264 @@
+$text-primary: #FEFEFE;
+$text-secondary: #fefefebd;
+$background: #121212;
+$background-1: #111111;
+$background-2: #1A1A1A;
+$background-3: #2A2A2A;
+$gradient: linear-gradient(115deg, #5e087d 0%,#dc1b30 50%,#ffa41a 100%);
+
+
+body{
+    background-color: $background;
+    color: $text-primary;
+}
+
+a{
+    color: $text-primary;
+
+    &:hover{
+        color: $text-secondary;
+    }
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+    flex-wrap: wrap;
+    color: $text-primary;
+    font-size: 10px;
+    
+    h2{
+        margin-bottom: 22px;
+        font-size: 24px;
+    }
+    
+    .form{
+        background-color: $background-2;
+        width: 265px;
+        padding: 20px;
+        border-radius: 16px;
+
+        .buttonContainer{
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+        }
+    }
+}
+
+p.line {
+    position: relative;
+    overflow: hidden;
+    margin: 10px 0;
+  
+    &:after {
+        content: "";
+        display: inline-block;
+        height: 11px;
+        vertical-align: bottom;
+        width: 100%;
+        margin-right: -100%;
+        margin-left: 10px;
+        border-top: 1px solid white;
+    }
+}
+
+
+.sampleContainer{
+    $gap: 10px;
+    padding: $gap 0;
+    //justify-content: space-between;
+    
+    &.sampleContainer-6{
+        display: grid;
+        gap: $gap;
+        grid-template-columns: repeat(6, minmax(0,1fr));
+
+
+        .music-sample{
+            width: 100%;
+        }
+
+        @media (max-width: 1000px) {
+            grid-template-columns: repeat(5, minmax(0,1fr));
+        }
+
+        @media (max-width: 850px) {
+            grid-template-columns: repeat(4, minmax(0,1fr));
+        }
+
+        @media (max-width: 600px) {
+            grid-template-columns: repeat(2, minmax(0,1fr));
+        }
+    }
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+    }
+}
+
+.v-input{
+
+    &:not(.v-checkbox){
+
+        .v-input__control{
+            background-color: $background-3;
+            color: $text-secondary;
+            border-radius: 8px;
+            font-size: 16px;
+
+            .v-field__outline{
+                display: none;
+            }
+        }
+    }
+
+    &.v-checkbox{
+        color: $text-primary;
+
+        .v-label{
+            font-size: 12px;
+            opacity: 1;
+        }
+    }
+}
+
+.v-btn.v-btn--density-default{
+    font-size: 18px;
+    padding: 10px 20px;
+    height: auto;
+    letter-spacing: normal;
+    text-transform: none;
+    font-weight: bold;
+
+    &.bg-gradient{
+        background: $gradient;
+        color: $text-primary;
+        font-weight: bold;
+        text-transform: none;
+        background-size: 200% 200%;
+        animation: gradient 5s ease infinite;
+    }
+
+    &.bg-dark{
+        background: transparent;
+        color: $text-secondary;
+    }
+}
+
+.v-dialog{
+    .v-card{
+        background-color: $background-2;
+        color: $text-primary;
+        border-radius: 16px!important;
+    }
+}
+
+.primary-button{
+    background: $gradient;
+    border-radius: 50px;
+    display: flex;
+    padding: 14px 19px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+    &.animate{
+        background-size: 200% 200%;
+        animation: gradient 5s ease infinite;
+    }
+}
+
+.secondary-button{
+    background: $background-2;
+    border-radius: 50px;
+    display: flex;
+    padding: 14px 19px;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+
+}
+
+.gradient-text{
+    background: $gradient;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradient 5s ease infinite;
+}
+
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+.v-select__content .v-list,
+.v-autocomplete__content .v-list{
+    background-color: $background-3!important;
+    color: $text-primary;
+}
+
+.material-icons {
+    font-family: 'Material Symbols Outlined', serif;
+    font-variation-settings: 'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 40;
+
+    transition: .2s;
+
+    font-size: 140%;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: normal;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+
+    &.materialFill{
+        font-variation-settings: 'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 40;
+    }
+}
+
+@media (max-width: 600px){
+
+    .formContainer{
+        align-content: flex-start;
+        padding: 20px;
+
+        .form{
+            width: 100%;
+        }
+    }
+}
+
+.chrome{
+    audio {
+        filter: invert(1);
+    }
+}

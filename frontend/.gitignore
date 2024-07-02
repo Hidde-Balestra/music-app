@@ -1,0 +1,16 @@
+node_modules
+.idea/
+.vscode/
+.scannerwork/
+coverage/
+dist/index.html
+dist/css/app.0063cb93.css
+dist/css/chunk-vendors.07419fda.css
+dist/fonts/materialdesignicons-webfont.088756a8.woff2
+dist/fonts/materialdesignicons-webfont.27d2ebc4.woff
+dist/fonts/materialdesignicons-webfont.392a5bf8.ttf
+dist/fonts/materialdesignicons-webfont.daf3a4a8.eot
+dist/js/app.2c85253b.js
+dist/js/app.2c85253b.js.map
+dist/js/chunk-vendors.bf71a446.js
+dist/js/chunk-vendors.bf71a446.js.map

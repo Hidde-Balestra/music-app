@@ -1,0 +1,22 @@
+const scanner= require('sonarqube-scanner');
+scanner({
+        options:{
+            "sonar.exclusions":"**/*.test.tsx",
+            "sonar.tests":"./src",
+            "sonar.test.inclusions":"**/*.test.tsx,**/*.test.ts",
+            "sonar.javascript.lcov.reportPaths":"coverage/lcov.info",
+            "sonar.host.url":"http://localhost:9000",
+            "sonar.token":process.env.SONARQUBE_TOKEN,
+            "sonar.login":"admin",
+            "sonar.password":"password",
+            "sonar.projectKey":"Music-Collab-Platform-Front-end",
+            "sonar.sources":"./src"
+        },
+        serverUrl:"http://localhost:9000",
+        //host.url="http://localhost:9000",
+        login:"admin",
+        password:"password",
+        token:process.env.SONARQUBE_TOKEN
+    },
+    ()=>process.exit()
+);
